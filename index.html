@@ -405,8 +405,30 @@
     }
   </style>
 </head>
+  <style>
+  #intro-video {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #intro-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
 
 <body>
+  <div id="intro-video">
+  <video autoplay muted playsinline>
+    <source src="Legacy_Wear_intro_enhanced.mp4" type="video/mp4">
+  </video>
+</div>
   <header class="navbar">
     <a class="brand" href="#home">
       <img src="assets/logo.png" alt="LEGACY WEAR logo" />
@@ -669,5 +691,10 @@
       event.target.reset();
     }
   </script>
+  <script>
+  setTimeout(() => {
+    document.getElementById("intro-video").style.display = "none";
+  }, 2000);
+</script>
 </body>
 </html>
