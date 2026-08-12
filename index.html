@@ -150,8 +150,21 @@
       .email-box{width:100%}
       .email-box input{width:100%}
       .cart{width:100%}
-    }
-  </style>
+      #intro-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #000;
+}
+
+#intro-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    }</style>
 </head>
 <body>
 
@@ -309,6 +322,11 @@
   document.getElementById('cartBtn').onclick=()=>{cartEl.classList.add('open');overlay.classList.add('open')};
   document.getElementById('closeCart').onclick=()=>{cartEl.classList.remove('open');overlay.classList.remove('open')};
   overlay.onclick=()=>{cartEl.classList.remove('open');overlay.classList.remove('open')};
+</script>
+  <script>
+  setTimeout(function() {
+    document.getElementById("intro-video").style.display = "none";
+  }, 2000);
 </script>
 </body>
 </html>
