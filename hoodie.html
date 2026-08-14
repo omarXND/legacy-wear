@@ -165,11 +165,6 @@ function closeOrder(){
   document.body.style.overflow = '';
 }
 
-function submitOrder(event){
-  event.preventDefault();
-  alert('Order form completed. Email connection can be added next.');
-}
-
 document.getElementById('orderModal').addEventListener('click', function(e){
   if(e.target === this) closeOrder();
 });
@@ -185,7 +180,7 @@ document.addEventListener('keydown', function(e){
     <div class="eyebrow">LEGACY WEAR</div>
     <h2>COMPLETE<br><span>YOUR ORDER</span></h2>
     <p>Fill in your information to complete your Legacy Essential Hoodie order.</p>
-    <form onsubmit="submitOrder(event)">
+    <form action="https://formspree.io/f/xnpazoyb" method="POST">
       <label>FULL NAME</label>
       <input type="text" name="name" placeholder="Your full name" required>
       <label>EMAIL</label>
